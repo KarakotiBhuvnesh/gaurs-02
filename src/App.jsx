@@ -6,7 +6,7 @@ import Amenities   from './components/Amenities'
 import Location    from './components/Location'
 import EnquireForm from './components/EnquireForm'
 import Footer      from './components/Footer'
-// import MobileBar   from './components/MobileBar'
+import MobileBar   from './components/MobileBar'
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
       <Location />
       <EnquireForm />
       <Footer />
-      {/* <MobileBar /> */}
+      <MobileBar />
     </>
   )
 }
