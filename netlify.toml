@@ -1,3 +1,6 @@
-echo [build] > netlify.toml
-echo   command = "npm install && npm run build" >> netlify.toml
-echo   publish = "dist" >> netlify.toml
+[build]
+  command = "rm -rf node_modules && npm install && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
