@@ -1,133 +1,141 @@
-import { useState } from 'react'
+import { useState } from "react";
 
-export default function EnquireForm() {
-  const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' })
-  const [status, setStatus] = useState('')
+const GSHEET_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbwH02fTpKKhJvfrP3FEXvPYzZA7kasq9kTP4HxRVMT3FV1ZR1Y8F8_iiqTxnC1t7sSJ/exec";
 
-  const handle = e => setForm({ ...form, [e.target.name]: e.target.value })
+const EnquireForm = () => {
+  const [status, setStatus] = useState("idle");
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  const submit = async e => {
-    e.preventDefault()
-    setStatus('sending')
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
     try {
-      const res = await fetch('/backend/submit.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      const data = await res.json()
-      setStatus(data.success ? 'success' : 'error')
-    } catch {
-      setStatus('error')
-    }
-  }
+      const res = await fetch(GSHEET_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, source: "enquiry_form" }),
+      });
 
-  const inputCls =
-    'w-full border border-gray-200 rounded-lg px-4 py-3 text-sm text-charcoal ' +
-    'placeholder-gray-400 focus:outline-none focus:border-gold transition-colors bg-white'
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("success");
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
 
   return (
-    <section id="enquire" className="py-24 bg-dark">
-      <div className="max-w-2xl mx-auto px-4 sm:px-6">
+    <section id="enquire" className="bg-slate-900 py-16">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white">
+            Enquire Now
+          </h2>
+          <p className="mt-2 text-slate-300 text-sm md:text-base">
+            Share your details and we will reach out with project information and pricing.
+          </p>
+        </div>
 
-        <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold text-center mb-3">
-          Get In Touch
-        </p>
-        <h2 className="font-serif text-3xl sm:text-4xl text-center font-bold text-white mb-3">
-          Enquire Now
-        </h2>
-        <p className="text-center text-gray-400 mb-12 text-sm leading-relaxed">
-          Invest Now — Starting INR 1 Cr Onwards.<br />
-          Please take a moment to fill out the form and our team will get back to you within 24 hours.
-        </p>
-
-        {status === 'success' ? (
-          <div className="bg-green-900/30 border border-green-500 rounded-2xl p-12 text-center">
-            <div className="w-14 h-14 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
-              <span className="text-green-400 text-2xl">✓</span>
-            </div>
-            <h3 className="font-serif text-2xl text-white mb-2">Thank You!</h3>
-            <p className="text-gray-400 text-sm">
-              Our team will contact you within 24 hours regarding Bento — Gaur Yamuna City.
-            </p>
-          </div>
-        ) : (
-          <form onSubmit={submit} className="bg-white/5 border border-white/10 rounded-2xl p-8 space-y-5">
-
+        <form
+          onSubmit={handleSubmit}
+          className="bg-slate-800/80 backdrop-blur rounded-2xl shadow-xl border border-slate-700 p-6 md:p-8 space-y-6"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <div>
-              <label className="text-gray-400 text-xs uppercase tracking-wide mb-1.5 block">
-                Full Name *
+              <label className="block text-sm font-medium text-slate-200 mb-1.5">
+                Name
               </label>
               <input
                 name="name"
                 required
                 value={form.name}
-                onChange={handle}
-                placeholder="Your full name"
-                className={inputCls}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500"
+                placeholder="Enter your full name"
               />
             </div>
 
             <div>
-              <label className="text-gray-400 text-xs uppercase tracking-wide mb-1.5 block">
-                Phone Number *
-              </label>
-              <input
-                name="phone"
-                required
-                value={form.phone}
-                onChange={handle}
-                placeholder="+91 XXXXX XXXXX"
-                className={inputCls}
-              />
-            </div>
-
-            <div>
-              <label className="text-gray-400 text-xs uppercase tracking-wide mb-1.5 block">
-                Email Address *
+              <label className="block text-sm font-medium text-slate-200 mb-1.5">
+                Email
               </label>
               <input
                 name="email"
                 type="email"
                 required
                 value={form.email}
-                onChange={handle}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500"
                 placeholder="you@example.com"
-                className={inputCls}
               />
             </div>
 
             <div>
-              <label className="text-gray-400 text-xs uppercase tracking-wide mb-1.5 block">
-                Message (Optional)
+              <label className="block text-sm font-medium text-slate-200 mb-1.5">
+                Phone
               </label>
-              <textarea
-                name="message"
-                rows={3}
-                value={form.message}
-                onChange={handle}
-                placeholder="Budget, preferred size, any questions..."
-                className={inputCls + ' resize-none'}
+              <input
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500"
+                placeholder="Contact number"
               />
             </div>
+          </div>
 
+          <div>
+            <label className="block text-sm font-medium text-slate-200 mb-1.5">
+              Message
+            </label>
+            <textarea
+              name="message"
+              rows={4}
+              value={form.message}
+              onChange={handleChange}
+              className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500 resize-none"
+              placeholder="Tell us what you are looking for…"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <button
               type="submit"
-              disabled={status === 'sending'}
-              className="w-full bg-gold text-dark font-semibold py-3.5 text-sm tracking-widest hover:bg-yellow-500 transition-colors rounded-lg disabled:opacity-60"
+              disabled={status === "loading"}
+              className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-8 py-2.5 text-sm font-semibold text-slate-900 shadow-md hover:bg-emerald-400 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
             >
-              {status === 'sending' ? 'SENDING...' : 'SUBMIT ENQUIRY'}
+              {status === "loading" ? "Sending..." : "Send Enquiry"}
             </button>
 
-            {status === 'error' && (
-              <p className="text-red-400 text-sm text-center">
-                Something went wrong. Please try again or call us directly.
+            {status === "success" && (
+              <p className="text-sm text-emerald-400">
+                We received your enquiry. Our team will contact you shortly.
               </p>
             )}
-
-          </form>
-        )}
+            {status === "error" && (
+              <p className="text-sm text-red-400">
+                Could not send your enquiry. Please try again.
+              </p>
+            )}
+          </div>
+        </form>
       </div>
     </section>
-  )
-}
+  );
+};
+
+export default EnquireForm;

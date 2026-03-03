@@ -31,6 +31,11 @@ export default function Footer() {
             </p>
           </div>
 
+          <div>
+          {/* Contact */}
+          </div>
+            
+
           {/* Quick Links */}
           <div>
             <h5 className="text-white text-xs font-semibold uppercase tracking-widest mb-4">
@@ -44,34 +49,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h5 className="text-white text-xs font-semibold uppercase tracking-widest mb-4">
-              Contact
-            </h5>
-            <ul className="space-y-2.5 text-sm">
-              <li>Gaur Yamuna City</li>
-              <li>Near Exit 2C, Sector-19</li>
-              <li>Yamuna Expressway, Greater Noida, UP</li>
-              <li>
-                <a
-                  href="tel:+919999999999"
-                  className="hover:text-gold transition-colors text-white"
-                >
-                  +91 99999 99999
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@bentoapartments.in"
-                  className="hover:text-gold transition-colors"
-                >
-                  info@bentoapartments.in
-                </a>
-              </li>
             </ul>
           </div>
 
