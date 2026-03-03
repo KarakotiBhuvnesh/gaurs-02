@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const GSHEET_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbxi3eMVQgPB9oTbw3X_-HHxAsG_hnV_nu7J01o3VV2Ej6hxykO9Nv0OWqNKnOn1k6Rd/exec";
+  "https://script.google.com/macros/s/AKfycbyizIII_WjKBVrsw015e8iLqqFH5Tm3NywoJnXIOVP8yqErH3jozsu08JC2_nac2EWqXw/exec";
 
 const EnquireForm = () => {
   const [status, setStatus] = useState("idle");
