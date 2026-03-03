@@ -3,7 +3,7 @@ const specs = [
   { label: 'Floors',    value: '40 Storeys'      },
   { label: 'Furnished', value: 'Fully'           },
   { label: 'Starting',  value: '₹1 Cr+'          },
-  { label: 'Township',  value: '250 Acres'       },
+  { label: 'Towers',  value: '2 Iconinc'       },
   { label: 'Clubhouse', value: '45,000 Sq.Ft.'   },
 ]
 
