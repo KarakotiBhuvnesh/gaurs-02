@@ -11,7 +11,7 @@ const offerings = [
   'Fully Furnished Studio Apartments',
   'Branded Hotel',
   'Luxury Mall',
-  'Massive Parking Space for 8,000 Cars',
+  '45000 sq ft luxury clubhouse',
 ]
 
 export default function About() {
@@ -21,7 +21,7 @@ export default function About() {
 
         <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold text-center mb-3">The Project</p>
         <h2 className="font-serif text-3xl sm:text-4xl text-center font-bold text-dark mb-3">
-          Luxury Studio Apartments — Codename Bento
+          Luxury Studio Apartments — Codename: Bento
         </h2>
         <p className="text-center text-gray-500 max-w-2xl mx-auto mb-14 leading-relaxed">
           Part of the 250 Acre Integrated Township — Gaur Yamuna City, Yamuna Expressway.
@@ -50,9 +50,7 @@ export default function About() {
             />
           </div>
           <div>
-            <p className="text-gold text-xl tracking-[0.35em] uppercase font-semibold mb-3">
-              Three Worlds. One Address.
-            </p>
+
             <h3 className="font-serif text-2xl font-bold text-dark mb-5">
               An Icon in the Making
             </h3>

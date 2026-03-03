@@ -27,11 +27,8 @@ export default function Hero() {
         <p className="font-serif text-xl text-gray-200 mb-2">
           Introducing — Luxury Studio Apartments
         </p>
-        <p className="font-serif text-2xl font-semibold text-white mb-6">
-          Three Worlds. One Address.
-        </p>
-        <p className="text-gray-300 max-w-lg mx-auto mb-4 text-sm leading-relaxed">
-          Part of the 250 Acre Integrated Township — Gaur Yamuna City
+        <p className="text-gray-300 max-w-lg mx-auto mb-4 text-xl leading-relaxed">
+          Yamuna Expressway
         </p>
         <p className="text-white font-semibold text-lg mb-10">
           Starting &#8377;1 Cr Onwards
@@ -49,7 +46,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white opacity-40">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
+        <span className="text-xs tracking-widest uppercase"></span>
         <div className="w-px h-8 bg-white animate-pulse" />
       </div>
     </section>

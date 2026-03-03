@@ -34,6 +34,7 @@ const items = [
 export default function Highlights() {
   return (
     <section id="highlights" className="py-24 bg-slate-50">
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold text-center mb-3">
           Why Invest

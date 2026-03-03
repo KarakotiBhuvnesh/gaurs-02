@@ -56,11 +56,11 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <p>&copy; 2026 Bento — Gaur Yamuna City. All rights reserved.</p>
+          <p>&copy; 2026 Bento — All rights reserved.</p>
           <p>
             A Project by{' '}
-            <span className="text-gold font-semibold">Gaursons India</span>{' '}
-            &mdash; 3 Decades of Trust
+            <span className="text-gold font-semibold">Leading Developer</span>{' '}
+            &mdash; 3 Decades of Trust & Legacy
           </p>
         </div>
 
