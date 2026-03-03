@@ -17,26 +17,31 @@ const EnquireForm = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("loading");
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus("loading");
 
-    try {
-      const res = await fetch(GSHEET_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "enquiry_form" }),
-      });
+  try {
+    const params = new URLSearchParams({
+      ...form,
+      source: "enquiry_form", // or "middle_form"
+    });
 
-      if (!res.ok) throw new Error("Request failed");
+    const res = await fetch(GSHEET_ENDPOINT, {
+      method: "POST",
+      body: params,
+    });
 
-      setStatus("success");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      console.error(err);
-      setStatus("error");
-    }
-  };
+    if (!res.ok) throw new Error("Request failed");
+
+    setStatus("success");
+    setForm({ name: "", email: "", phone: "", message: "" });
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+  }
+};
+
 
   return (
     <section id="enquire" className="bg-slate-900 py-16">
