@@ -22,7 +22,8 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
 
-        <h1 className="font-serif text-6xl sm:text-7xl font-bold text-gold mb-3">LUXURY STUDIO APARTMENTS</h1>
+        <h1 className="font-serif text-6xl sm:text-7xl font-bold text-gold mb-3"> INTRODUCING</h1>
+        <h1 className="font-serif text-6xl sm:text-7xl font-bold text-white mb-3"> LUXURY STUDIO APARTMENTS</h1>
         <h1 className="font-serif text-6xl sm:text-5xl font-bold text-gold mb-3">BENTO</h1>
 
         <p className="text-gray-300 max-w-lg mx-auto mb-4 text-xl leading-relaxed">
