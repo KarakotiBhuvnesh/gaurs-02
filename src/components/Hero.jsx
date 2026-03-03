@@ -22,11 +22,9 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
 
-        <h1 className="font-serif text-6xl sm:text-7xl font-bold text-gold mb-3">Luxury Studio Apartment</h1>
+        <h1 className="font-serif text-6xl sm:text-7xl font-bold text-gold mb-3">LUXURY STUDIO APARTMENTS</h1>
         <h1 className="font-serif text-6xl sm:text-5xl font-bold text-gold mb-3">BENTO</h1>
-        <p className="font-serif text-xl text-gray-200 mb-2">
-          Introducing — Luxury Studio Apartments
-        </p>
+
         <p className="text-gray-300 max-w-lg mx-auto mb-4 text-xl leading-relaxed">
           Yamuna Expressway
         </p>
