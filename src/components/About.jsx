@@ -3,7 +3,7 @@ const specs = [
   { label: 'Floors',    value: '40 Storeys'      },
   { label: 'Furnished', value: 'Fully'           },
   { label: 'Starting',  value: '₹1 Cr+'          },
-  { label: 'Towers',  value: '2 Iconinc'       },
+  { label: 'Towers',  value: '2 Iconic'       },
   { label: 'Clubhouse', value: '45,000 Sq.Ft.'   },
 ]
 
@@ -25,7 +25,7 @@ export default function About() {
         </h2>
         <p className="text-center text-gray-500 max-w-2xl mx-auto mb-14 leading-relaxed">
           Part of the 250 Acres Integrated Township — Gaur Yamuna City, Yamuna Expressway.
-          A modern glass building with 2 iconic 40-Storey Towers.
+          A modern glass building with 2 Iconic 40-Storey Towers.
         </p>
 
         {/* Specs bar */}
