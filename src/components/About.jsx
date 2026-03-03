@@ -50,7 +50,7 @@ export default function About() {
             />
           </div>
           <div>
-            <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold mb-3">
+            <p className="text-gold text-xl tracking-[0.35em] uppercase font-semibold mb-3">
               Three Worlds. One Address.
             </p>
             <h3 className="font-serif text-2xl font-bold text-dark mb-5">
