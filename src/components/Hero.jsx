@@ -21,11 +21,9 @@ export default function Hero() {
       />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold mb-4">
-          A Project by Gaursons India — 3 Decades of Trust
-        </p>
+
         <p className="text-gray-300 text-sm mb-3 tracking-widest uppercase">
-          Gaur Yamuna City · Yamuna Expressway
+          Yamuna Expressway
         </p>
         <h1 className="font-serif text-6xl sm:text-7xl font-bold text-gold mb-3">BENTO</h1>
         <p className="font-serif text-xl text-gray-200 mb-2">
