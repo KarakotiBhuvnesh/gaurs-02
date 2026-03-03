@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const GSHEET_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbwH02fTpKKhJvfrP3FEXvPYzZA7kasq9kTP4HxRVMT3FV1ZR1Y8F8_iiqTxnC1t7sSJ/exec";
+  "https://script.google.com/macros/s/AKfycbxi3eMVQgPB9oTbw3X_-HHxAsG_hnV_nu7J01o3VV2Ej6hxykO9Nv0OWqNKnOn1k6Rd/exec";
 
 const MiddleForm = () => {
   const [status, setStatus] = useState("idle");
@@ -23,7 +23,7 @@ const handleSubmit = async (e) => {
   try {
     const params = new URLSearchParams({
       ...form,
-      source: "enquiry_form", // or "middle_form"
+      source: "middle_form",
     });
 
     const res = await fetch(GSHEET_ENDPOINT, {
@@ -31,15 +31,19 @@ const handleSubmit = async (e) => {
       body: params,
     });
 
-    if (!res.ok) throw new Error("Request failed");
+    const text = await res.text();
+    console.log("Apps Script response:", res.status, text);
 
     setStatus("success");
     setForm({ name: "", email: "", phone: "", message: "" });
   } catch (err) {
-    console.error(err);
+    console.error("Submit error:", err);
     setStatus("error");
   }
 };
+
+
+
 
 
   return (
@@ -100,6 +104,7 @@ const handleSubmit = async (e) => {
                   Could not submit. Please try again.
                 </p>
               )}
+
             </div>
           </form>
         </div>

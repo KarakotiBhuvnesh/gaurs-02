@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const GSHEET_ENDPOINT =
-  "https://script.google.com/macros/s/AKfycbwH02fTpKKhJvfrP3FEXvPYzZA7kasq9kTP4HxRVMT3FV1ZR1Y8F8_iiqTxnC1t7sSJ/exec";
+  "https://script.google.com/macros/s/AKfycbxi3eMVQgPB9oTbw3X_-HHxAsG_hnV_nu7J01o3VV2Ej6hxykO9Nv0OWqNKnOn1k6Rd/exec";
 
 const EnquireForm = () => {
   const [status, setStatus] = useState("idle");
@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
   try {
     const params = new URLSearchParams({
       ...form,
-      source: "enquiry_form", // or "middle_form"
+      source: "enquiry_form",
     });
 
     const res = await fetch(GSHEET_ENDPOINT, {
@@ -32,15 +32,19 @@ const handleSubmit = async (e) => {
       body: params,
     });
 
-    if (!res.ok) throw new Error("Request failed");
+    const text = await res.text();
+    console.log("Apps Script response:", res.status, text);
 
     setStatus("success");
     setForm({ name: "", email: "", phone: "", message: "" });
   } catch (err) {
-    console.error(err);
+    console.error("Submit error:", err);
     setStatus("error");
   }
 };
+
+
+
 
 
   return (
@@ -127,15 +131,16 @@ const handleSubmit = async (e) => {
             </button>
 
             {status === "success" && (
-              <p className="text-sm text-emerald-400">
-                We received your enquiry. Our team will contact you shortly.
+              <p className="text-xs text-emerald-500">
+                Thank you! Check your phone or email shortly.
               </p>
             )}
             {status === "error" && (
-              <p className="text-sm text-red-400">
-                Could not send your enquiry. Please try again.
+              <p className="text-xs text-red-500">
+                Could not submit. Please try again.
               </p>
             )}
+
           </div>
         </form>
       </div>
