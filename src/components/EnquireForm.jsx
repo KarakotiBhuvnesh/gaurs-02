@@ -74,7 +74,7 @@ const handleSubmit = async (e) => {
                 value={form.name}
                 onChange={handleChange}
                 className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500"
-                placeholder="Enter your full name"
+
               />
             </div>
 
@@ -89,7 +89,7 @@ const handleSubmit = async (e) => {
                 value={form.email}
                 onChange={handleChange}
                 className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500"
-                placeholder="you@example.com"
+
               />
             </div>
 
@@ -102,7 +102,7 @@ const handleSubmit = async (e) => {
                 value={form.phone}
                 onChange={handleChange}
                 className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500"
-                placeholder="Contact number"
+
               />
             </div>
           </div>
@@ -117,7 +117,7 @@ const handleSubmit = async (e) => {
               value={form.message}
               onChange={handleChange}
               className="w-full rounded-lg border border-slate-600 bg-slate-900/70 px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 placeholder:text-slate-500 resize-none"
-              placeholder="Tell us what you are looking for…"
+
             />
           </div>
 

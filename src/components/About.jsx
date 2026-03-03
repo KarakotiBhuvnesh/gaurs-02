@@ -24,8 +24,8 @@ export default function About() {
           Luxury Studio Apartments — Codename: Bento
         </h2>
         <p className="text-center text-gray-500 max-w-2xl mx-auto mb-14 leading-relaxed">
-          Part of the 250 Acre Integrated Township — Gaur Yamuna City, Yamuna Expressway.
-          A modern glass building with 2 iconic 40-storey towers.
+          Part of the 250 Acres Integrated Township — Gaur Yamuna City, Yamuna Expressway.
+          A modern glass building with 2 iconic 40-Storey Towers.
         </p>
 
         {/* Specs bar */}
