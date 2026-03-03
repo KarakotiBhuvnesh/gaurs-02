@@ -1,6 +1,6 @@
 const specs = [
   { label: 'Size',      value: '650–675 Sq.Ft.' },
-  { label: 'Floors',    value: '40 Storeys'      },
+  { label: 'Floors',    value: '40 Storey'      },
   { label: 'Furnished', value: 'Fully'           },
   { label: 'Starting',  value: '₹1 Cr+'          },
   { label: 'Towers',  value: '2 Iconic'       },
