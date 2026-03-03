@@ -1,17 +1,17 @@
 const specs = [
   { label: 'Size',      value: '650–675 Sq.Ft.' },
   { label: 'Floors',    value: '40 Storeys'      },
-  { label: 'Towers',    value: '2 Iconic'        },
   { label: 'Furnished', value: 'Fully'           },
   { label: 'Starting',  value: '₹1 Cr+'          },
   { label: 'Township',  value: '250 Acres'       },
+  { label: 'Clubhouse', value: '45,000 Sq.Ft.'   },
 ]
 
 const offerings = [
   'Fully Furnished Studio Apartments',
   'Branded Hotel',
   'Luxury Mall',
-  '45000 sq ft luxury clubhouse',
+  '45,000 Sq.Ft. Luxury Clubhouse',
 ]
 
 export default function About() {
