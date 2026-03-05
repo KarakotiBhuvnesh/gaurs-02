@@ -23,7 +23,6 @@ export default function Footer() {
             </p>
             <p className="text-sm leading-relaxed">
               Luxury Studio Apartments on Yamuna Expressway.
-              Part of the 250 Acre Integrated Township.
             </p>
             <p className="text-sm mt-4">
               Starting{' '}

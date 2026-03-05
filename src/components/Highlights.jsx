@@ -7,7 +7,7 @@ const items = [
   {
     num: 'II',
     title: 'Near Upcoming Noida International Airport',
-    desc: 'Located just 24 km from Jewar Airport — India\'s largest upcoming airport.',
+    desc: "Located just 24 km from Jewar Airport — India's largest upcoming airport.",
   },
   {
     num: 'III',
@@ -33,29 +33,37 @@ const items = [
 
 export default function Highlights() {
   return (
-    <section id="highlights" className="py-24 bg-slate-50">
-      
+    <section id="highlights" className="py-16 sm:py-24 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
+        {/* Header */}
         <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold text-center mb-3">
           Why Invest
         </p>
-        <h2 className="font-serif text-3xl sm:text-4xl text-center font-bold text-dark mb-4">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-center font-bold text-dark mb-4">
           Location Advantages
         </h2>
-        <p className="text-center text-gray-500 max-w-xl mx-auto mb-14">
+        <p className="text-center text-gray-500 max-w-xl mx-auto mb-10 sm:mb-14 text-sm sm:text-base">
           A project by one of the top developers in real estate with a track record of 3 decades —
           Invest Now. Starting INR 1 Cr Onwards.
         </p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        {/* Cards grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {items.map(it => (
             <div key={it.num}
-              className="bg-white rounded-xl p-8 border border-gray-100 hover:border-gold hover:shadow-md transition-all">
-              <p className="font-serif text-3xl font-bold text-gold mb-4">{it.num}</p>
-              <h3 className="font-semibold text-dark mb-2 text-sm leading-snug">{it.title}</h3>
+              className="bg-white rounded-xl p-5 sm:p-8 border border-gray-100 hover:border-gold hover:shadow-md transition-all">
+              <p className="font-serif text-2xl sm:text-3xl font-bold text-gold mb-3 sm:mb-4">
+                {it.num}
+              </p>
+              <h3 className="font-semibold text-dark mb-2 text-sm sm:text-base leading-snug">
+                {it.title}
+              </h3>
               <p className="text-gray-500 text-sm leading-relaxed">{it.desc}</p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
