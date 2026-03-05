@@ -23,7 +23,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl mx-auto">
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-gold mb-2 sm:mb-3">
+        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-gold mb-2 sm:mb-3">
           INTRODUCING
         </h1>
         <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-2 sm:mb-3">
@@ -32,23 +32,37 @@ export default function Hero() {
 
 
         <p className="text-gray-300 max-w-lg mx-auto mb-3 text-base sm:text-xl leading-relaxed">
-          Yamuna Expressway
+          Near Noida International Airport
         </p>
         <p className="text-white font-semibold text-base sm:text-lg mb-8">
           Starting &#8377;1 Cr Onwards
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#enquire"
-            className="bg-gold text-dark font-semibold px-8 py-3 text-sm tracking-widest hover:bg-yellow-500 transition-colors rounded-sm">
+        
+        <div className="inline-flex items-center justify-center gap-3 mb-8">
+          <span className="h-px w-10 bg-gold hidden sm:block" />
+          <div className="px-6 py-2 border border-gold text-gold text-xs sm:text-sm tracking-[0.35em] uppercase">
+            PRE LAUNCH
+          </div>
+          <span className="h-px w-10 bg-gold hidden sm:block" />
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
+          <a
+            href="#enquire"
+            className="bg-gold text-dark font-semibold px-5 py-2 sm:px-5 sm:py-2 text-xs sm:text-sm tracking-widest hover:bg-yellow-500 transition-colors rounded-sm"
+          >
             ENQUIRE NOW
           </a>
-          <a href="#about"
-            className="border border-white text-white px-8 py-3 text-sm tracking-widest hover:bg-white hover:text-dark transition-colors rounded-sm">
+
+          <a
+            href="#about"
+            className="border border-white text-white px-5 py-2 sm:px-5 sm:py-2 text-xs sm:text-sm tracking-widest hover:bg-white hover:text-dark transition-colors rounded-sm"
+          >
             EXPLORE
           </a>
         </div>
-      </div>
+        </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white opacity-40">

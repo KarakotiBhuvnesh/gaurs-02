@@ -7,7 +7,7 @@ const items = [
   {
     num: 'II',
     title: 'Near Upcoming Noida International Airport',
-    desc: "Located just 24 km from Jewar Airport — India's largest upcoming airport.",
+    desc: "Located just near the World's 4th Largest Airport -  Noida International Airport on Yamuna Expressway",
   },
   {
     num: 'III',
@@ -59,7 +59,7 @@ export default function Highlights() {
           </div>
           <div>
             <p className="text-gold text-xs tracking-[0.35em] uppercase font-semibold text-left mb-3">
-              Theree Worlds, One Address
+              Three Worlds, One Address
             </p>
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-dark mb-4 sm:mb-5">
               An Icon in the Making
