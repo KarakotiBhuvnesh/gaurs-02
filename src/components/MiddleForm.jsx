@@ -47,7 +47,7 @@ const handleSubmit = async (e) => {
 
 
   return (
-    <section id="middle-form" className="py-10">
+    <section id="middle-form" className="pb-7">
       <div className="max-w-3xl mx-auto px-4">
         <div className="bg-white/95 rounded-2xl shadow-md border border-slate-200 px-5 py-6 md:px-8 md:py-7">
           <h2 className="text-xl md:text-2xl font-semibold text-slate-900 mb-1">
