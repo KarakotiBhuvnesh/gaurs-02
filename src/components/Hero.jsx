@@ -31,17 +31,18 @@ export default function Hero() {
         </h1>
 
 
-        <p className="text-gray-300 max-w-lg mx-auto mb-3 text-base sm:text-xl leading-relaxed">
+        <p className="text-gray-300 max-w-lg mx-auto mb-3 text-lg sm:text-2xl font-bold leading-relaxed">
           Near Noida International Airport
         </p>
-        <p className="text-white font-semibold text-base sm:text-lg mb-8">
+
+        <p className="text-white font-bold text-lg sm:text-xl mb-8">
           Starting &#8377;1 Cr Onwards
         </p>
 
         
         <div className="inline-flex items-center justify-center gap-3 mb-8">
           <span className="h-px w-10 bg-gold hidden sm:block" />
-          <div className="px-6 py-2 border border-gold text-gold text-xs sm:text-sm tracking-[0.35em] uppercase">
+          <div className="px-6 py-2 border border-gold font-bold text-gold text-l sm:text-l tracking-[0.35em] uppercase">
             PRE LAUNCH
           </div>
           <span className="h-px w-10 bg-gold hidden sm:block" />

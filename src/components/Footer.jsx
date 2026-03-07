@@ -15,9 +15,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <h4 className="font-serif text-white text-xl font-bold mb-1">
-              BENTO<span className="text-gold">.</span>
-            </h4>
+
             <p className="text-gold text-xs tracking-widest uppercase mb-4">
               Gaur Yamuna City
             </p>

@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14 sm:h-16">
         {/* Logo */}
         <a href="#hero" className={`font-serif font-bold text-base sm:text-lg ${tc}`}>
-          BENTO<span className="text-gold">.</span>
+          <span className="text-gold">.</span>
         </a>
 
         {/* Desktop nav */}
